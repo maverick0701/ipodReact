@@ -1,11 +1,12 @@
 import React from 'react';
-import './Monitor.css'
+import Menu from './Menu'
+import './Monitor.css';
 class Monitor extends React.Component{
    
     render(){
         return(
             <div className='Monitor'>
-                Menu
+                <Menu />
                 Screen
             </div>
         );

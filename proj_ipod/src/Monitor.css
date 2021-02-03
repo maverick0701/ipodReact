@@ -6,4 +6,21 @@
     position: absolute;
     left: 8%;
     top: 2%;
+    padding: 0%;
+}
+.Menu
+{
+    display:none;
+    border: 2px solid black;
+    width: 80px;
+    height: 100%;
+    position: relative;
+    top:-8%;
+    padding: 0%;
+    padding-right:20px ;
+}
+.Menu li{
+    list-style: none;
+    border: 2px solid black;
+    height: 20%;
 }
