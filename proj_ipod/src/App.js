@@ -1,9 +1,12 @@
 import { render } from "react-dom";
-import KeyPad from "./KeyPad";
+
+import Case from './Case'
 function App() {
   
   return (
-    <KeyPad />
+    <div>
+    <Case />
+    </div>
   );
 }
 

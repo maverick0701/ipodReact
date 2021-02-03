@@ -1,0 +1,9 @@
+.Monitor
+{
+    border: 2px solid black;
+    height: 206px;
+    width: 176px;
+    position: absolute;
+    left: 8%;
+    top: 2%;
+}

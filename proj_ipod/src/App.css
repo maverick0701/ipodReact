@@ -1,11 +1,20 @@
+.Case
+{
+    border: 2px solid black;
+    height: 400px;
+    width: 215px;
+    position: absolute;
+    left: 43%;
+    top: 13%;
+}
 .KeyPad
 {
     border:2px solid black;
     height: 150px;
     width: 150px;
     position: absolute;
-    top: 25%;
-    left: 40%;
+    top: 58%;
+    left: 13%;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -49,3 +58,5 @@
     top: 107%;
     left: 44%;
 }
+
+
