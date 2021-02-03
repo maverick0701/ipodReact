@@ -1,0 +1,51 @@
+.KeyPad
+{
+    border:2px solid black;
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    top: 25%;
+    left: 40%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    
+}
+.KeyCircle
+{
+    border: 2px solid black;
+    height:80px;
+    width: 80px;
+    border-radius: 50%;
+    position: absolute;
+    left: 22%;
+   
+    
+}
+
+.Key1
+{
+    position: absolute;
+    top:-30%;
+    left: 30%;
+}
+.Key2
+{
+    position: absolute;
+    left:-47%;
+    top:38%;
+}
+.Key3
+{
+    top: 38%;
+    position: absolute;
+    left: 106%;
+}
+
+.Key4
+{
+    position: absolute;
+    top: 111%;
+    left: 30%;
+}
