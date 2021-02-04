@@ -10,7 +10,7 @@
 }
 .Menu
 {
-    display:none;
+    display:block;
     border: 2px solid black;
     width: 80px;
     height: 100%;
@@ -22,5 +22,5 @@
 .Menu li{
     list-style: none;
     border: 2px solid black;
-    height: 20%;
+    height: 23%;
 }
