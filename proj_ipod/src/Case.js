@@ -13,8 +13,15 @@ class Case extends React.Component{
        }
    }
    componentDidMount(){
-    var touchArea = document.getElementById('toucharea');
-    console.log(touchArea);
+  
+    // var parentTouchArea = document.getElementById('parent-toucharea')
+    var touchArea = document.getElementById('toucharea')
+    var myRegion = new ZingTouch.Region(touchArea);
+   const rotate=new ZingTouch.Rotate();
+
+   myRegion.bind(touchArea, rotate, function(e){
+	console.log(e.detail.angle,e.detail.distanceFromLast);
+});
    
    }
    displayMenu=(currentScreen)=>
@@ -25,7 +32,7 @@ class Case extends React.Component{
    }
     render(){
         return(
-            <div className='Case'>
+            <div className='Case' id='parent-toucharea'>
                 
             <Monitor  
             currentScreen={this.state.currentScreen} 
