@@ -12,7 +12,8 @@ class Case extends React.Component{
            activeLink:1,
            angle:0,
            activeScreen:1,
-           screenList:[]
+           screenList:[],
+           clickedLink
        }
        
       

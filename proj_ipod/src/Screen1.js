@@ -2,11 +2,28 @@ import React from 'react';
 
 
 const Screen =(props)=>{
-        const {activeLink,screenList} =props;
-      
-        const list=screenList.map(element => {
-           return Object.keys(element)[0]
-        });   
+        const {activeLink,screenList,activeScreen} =props;
+        var list;
+        
+        if(activeScreen==1)
+        {
+            list=screenList.map(element => {
+            return Object.keys(element)[0]
+            });
+        }
+        if(activeScreen==2)
+        {
+            let arr=screenList.map(element => {
+                 for(let obj in element)
+                 {
+                   return element[obj];
+                 }
+                });
+            list=arr[0];
+        }
+
+        
+           
         return(
             <ul >
             <li style={activeLink==1 && style.bgColor || {background:'white'}}>{list[0]}</li>

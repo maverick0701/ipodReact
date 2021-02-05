@@ -12,6 +12,12 @@ const Menu =(props)=>{
             activeScreen={activeScreen}
             screenList={screenList[0]}
              />}
+             {activeScreen==2 && 
+            <Screen1 
+            activeLink={activeLink}
+            activeScreen={activeScreen}
+            screenList={screenList[0]}
+             />}
             </div>
         )
   
