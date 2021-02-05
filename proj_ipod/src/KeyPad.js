@@ -7,17 +7,21 @@ import { faBackward} from '@fortawesome/free-solid-svg-icons';
 import { faPlay} from '@fortawesome/free-solid-svg-icons';
 
 const KeyPad=(props)=>{
-        const {displayMenu}=props;
+        const {displayMenu,onLeft,onRight}=props;
         
         return(
             <div  className='KeyPad' id='toucharea' >
 
                 <div className='KeyCircle' >
                     <div  className='Key1' style={{color:'silver' }} onClick={()=>displayMenu('Menu')}>Menu</div>
-                    <div className="Key2" style={ { fontSize: 25 }}><FontAwesomeIcon icon={faBackward} /></div>
-                    <div className="Key3" style={ { fontSize: 25 }}><FontAwesomeIcon icon={faForward} /></div>
+                    <div className="Key2" style={ { fontSize: 25 }} onClick={()=>onLeft()}><FontAwesomeIcon icon={faBackward} /></div>
+                    <div className="Key3" style={ { fontSize: 25 }} onClick={()=>onRight()}><FontAwesomeIcon icon={faForward} /></div>
                     <div className="Key4" style={ { fontSize: 25 }}><FontAwesomeIcon icon={faPlay} /></div>
+                    <div id='selectButton'>
+                    Select
                 </div>
+                </div>
+                
             </div>
         );
     

@@ -14,9 +14,44 @@ class Case extends React.Component{
        }
     
    }
+   onSelect=()=>
+   {
+       console.log('selected');
+   }
+   onLeft=()=>
+   {
+    let currentLink=this.state.activeLink;
+        if(currentLink==1)
+        {
+            currentLink=4;
+            
+        }
+        else
+        {
+            currentLink--;
+        }
+        this.setState({
+            activeLink:currentLink
+        })
+   }
+   onRight=()=>
+   {
+        var currentLink=this.state.activeLink;
+        if(currentLink==4)
+        {
+            currentLink=1;
+            
+        }
+        else
+        {
+            currentLink++;
+        }
+    
+        this.setState({
+            activeLink:currentLink
+        })
+   }
    componentDidMount(){
-  
-    // var parentTouchArea = document.getElementById('parent-toucharea')
     var touchArea = document.getElementById('toucharea')
     var myRegion = new ZingTouch.Region(touchArea);
    const rotate=new ZingTouch.Rotate();
@@ -45,7 +80,7 @@ class Case extends React.Component{
                 this.setState({
                     activeLink:currentLink
                 })
-                console.log(currentLink);
+                
             }
             if(e.detail.angle-this.state.angle<-15)
             {
@@ -67,8 +102,6 @@ class Case extends React.Component{
             }
            
         }
-      
-	// console.log(e.detail.angle,e.detail.distanceFromLast);
 });
    
    }
@@ -86,7 +119,7 @@ class Case extends React.Component{
             currentScreen={this.state.currentScreen} 
             activeLink={this.state.activeLink}
             />
-            <KeyPad    displayMenu={this.displayMenu}/>
+            <KeyPad    displayMenu={this.displayMenu} onLeft={this.onLeft} onRight={this.onRight}/>
             </div>
         );
     }
