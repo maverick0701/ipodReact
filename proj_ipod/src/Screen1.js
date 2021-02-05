@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const Screen =(props)=>{
-        const {activeLink,screenList,activeScreen} =props;
+        const {activeLink,screenList,activeScreen, clickedLink }=props;
         var list;
         
         if(activeScreen==1)
@@ -19,7 +19,7 @@ const Screen =(props)=>{
                    return element[obj];
                  }
                 });
-            list=arr[0];
+            list=arr[clickedLink];
         }
 
         

@@ -13,11 +13,8 @@ class Case extends React.Component{
            angle:0,
            activeScreen:1,
            screenList:[],
-           clickedLink
+           clickedLink:0
        }
-       
-      
-    
    }
    onSelect=()=>
    {
@@ -57,21 +54,19 @@ class Case extends React.Component{
         })
    }
    componentDidMount(){
-       const item1={'item 1':['item 5','item 6','item 7','item 8']};
-       const item2={'item 2':['item 9','item 10','item 11','item 12']};
-       const item3={'item 3':['item 13','item 14','item 15','item 16']};
-       const item4={'item 4':['item 17','item 18','item 19','item 20']};
-        const comp1=[item1,item2,item3,item4];
-        const screenList=[comp1];   
+    const item1={'item 1':['item 5','item 6','item 7','item 8']};
+    const item2={'item 2':['item 9','item 10','item 11','item 12']};
+    const item3={'item 3':['item 13','item 14','item 15','item 16']};
+    const item4={'item 4':['item 17','item 18','item 19','item 20']};
+    const comp1=[item1,item2,item3,item4];
+    const screenList=[comp1];   
     this.setState({
         screenList
     })
     var touchArea = document.getElementById('toucharea')
     var myRegion = new ZingTouch.Region(touchArea);
-   const rotate=new ZingTouch.Rotate();
-
-   myRegion.bind(touchArea, rotate, (e)=>{
-       
+    const rotate=new ZingTouch.Rotate();
+    myRegion.bind(touchArea, rotate, (e)=>{
         if(this.state.angle==0)
         {
             this.state.angle=e.detail.angle;   
@@ -109,7 +104,6 @@ class Case extends React.Component{
                 {
                     currentLink++;
                 }
-               
                 this.setState({
                     activeLink:currentLink
                 })
@@ -139,6 +133,7 @@ class Case extends React.Component{
             activeLink={this.state.activeLink}
             activeScreen={this.state.activeScreen}
             screenList={this.state.screenList}
+            clickedLink={this.state.clickedLink}
             />
             <KeyPad    
             displayMenu={this.displayMenu} 
