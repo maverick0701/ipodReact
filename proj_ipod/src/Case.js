@@ -11,14 +11,11 @@ class Case extends React.Component{
            currentScreen:'Home',
            activeLink:1,
            angle:0,
-           activeScreen:1,
+           activeScreen:0,
            screenList:[],
-           clickedLink:0
+           clickedLink:0,
+           numLink:[]
        }
-   }
-   onSelect=()=>
-   {
-       console.log('selected');
    }
    onLeft=()=>
    {
@@ -54,10 +51,10 @@ class Case extends React.Component{
         })
    }
    componentDidMount(){
-    const item1={'item 1':['item 5','item 6','item 7','item 8']};
-    const item2={'item 2':['item 9','item 10','item 11','item 12']};
-    const item3={'item 3':['item 13','item 14','item 15','item 16']};
-    const item4={'item 4':['item 17','item 18','item 19','item 20']};
+    const item1={'Cover Flow':['item 5','item 6','item 7','item 8']};
+    const item2={'Music':['All Song','Artish','Album','item 13']};
+    const item3={'Games':['item 13','item 14','item 15','item 16']};
+    const item4={'Setting':['item 17','item 18','item 19','item 20']};
     const comp1=[item1,item2,item3,item4];
     const screenList=[comp1];   
     this.setState({
@@ -111,18 +108,39 @@ class Case extends React.Component{
            
         }
 });
-
-  
-        
-        
-    
-
    }
    displayMenu=(currentScreen)=>
    {
+    let activeScreen=1;
     this.setState({
-        currentScreen: currentScreen
+        currentScreen: currentScreen,
+        activeScreen
       })
+   }
+   onSelect=()=>
+   {
+        let activeScreen=this.state.activeScreen;
+        const clickedLink=this.state.activeLink-1;
+        if(activeScreen==0)
+        {
+            activeScreen=1;
+        }
+        else if(activeScreen==1)
+        {
+            activeScreen=2;
+        }
+        else if(activeScreen==2)
+        {
+            activeScreen=3;
+        }
+        
+       
+       this.setState({
+           activeLink:1,
+           clickedLink:clickedLink,
+           activeScreen
+           
+       })
    }
     render(){
         return(

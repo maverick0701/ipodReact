@@ -3,11 +3,11 @@ import Menu from './Menu'
 import './Monitor.css';
 import Home from './Home'
 const Monitor =(props)=>{
-    const {currentScreen,activeLink,activeScreen,screenList,clickedLink}=props;
+    const {activeLink,activeScreen,screenList,clickedLink}=props;
         return(
             <div className='Monitor'>
-                {currentScreen=='Home' && <Home />}
-                {currentScreen=='Menu' && 
+                {activeScreen==0 && <Home />}
+                {activeScreen!=0 && 
                 <Menu 
                 activeLink={activeLink} 
                 activeScreen={activeScreen}

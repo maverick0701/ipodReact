@@ -20,7 +20,6 @@ const KeyPad=(props)=>{
                     
                 </div>
                 <div id='selectButton' onClick={()=>onSelect()}>
-                    Select
                 </div>
                 
             </div>
