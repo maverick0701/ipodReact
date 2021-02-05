@@ -11,8 +11,11 @@ class Case extends React.Component{
            currentScreen:'Home',
            activeLink:1,
            angle:0,
-           activeScreen:1
+           activeScreen:1,
+           screenList:[]
        }
+       
+      
     
    }
    onSelect=()=>
@@ -53,6 +56,11 @@ class Case extends React.Component{
         })
    }
    componentDidMount(){
+    const comp1=['item 1','item 2','item 3','item 4'];
+    const screenList=[comp1];
+    this.setState({
+        screenList
+    })
     var touchArea = document.getElementById('toucharea')
     var myRegion = new ZingTouch.Region(touchArea);
    const rotate=new ZingTouch.Rotate();
@@ -104,7 +112,12 @@ class Case extends React.Component{
            
         }
 });
-   
+
+  
+        
+        
+    
+
    }
    displayMenu=(currentScreen)=>
    {
@@ -120,6 +133,7 @@ class Case extends React.Component{
             currentScreen={this.state.currentScreen} 
             activeLink={this.state.activeLink}
             activeScreen={this.state.activeScreen}
+            screenList={this.state.screenList}
             />
             <KeyPad    
             displayMenu={this.displayMenu} 
