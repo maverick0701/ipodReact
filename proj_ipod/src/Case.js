@@ -56,8 +56,12 @@ class Case extends React.Component{
         })
    }
    componentDidMount(){
-    const comp1=['item 1','item 2','item 3','item 4'];
-    const screenList=[comp1];
+       const item1={'item 1':['item 5','item 6','item 7','item 8']};
+       const item2={'item 2':['item 9','item 10','item 11','item 12']};
+       const item3={'item 3':['item 13','item 14','item 15','item 16']};
+       const item4={'item 4':['item 17','item 18','item 19','item 20']};
+        const comp1=[item1,item2,item3,item4];
+        const screenList=[comp1];   
     this.setState({
         screenList
     })
