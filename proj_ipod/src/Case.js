@@ -119,7 +119,12 @@ class Case extends React.Component{
             currentScreen={this.state.currentScreen} 
             activeLink={this.state.activeLink}
             />
-            <KeyPad    displayMenu={this.displayMenu} onLeft={this.onLeft} onRight={this.onRight}/>
+            <KeyPad    
+            displayMenu={this.displayMenu} 
+            onLeft={this.onLeft} 
+            onRight={this.onRight} 
+            onSelect={this.onSelect}
+            />
             </div>
         );
     }
