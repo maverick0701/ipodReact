@@ -1,15 +1,12 @@
 import React from 'react';
-
+import Screen1 from './Screen1'
 
 const Menu =(props)=>{
-        const {activeLink} =props;
+        const {activeLink,activeScreen} =props;
         return(
-            <ul className='Menu'>
-            <li style={activeLink==1 && style.bgColor || {background:'white'}}>Item 1</li>
-            <li style={activeLink==2 && style.bgColor || {background:'white'}}>Item 2</li>
-            <li style={activeLink==3 && style.bgColor || {background:'white'}}>Item 3</li>
-            <li style={activeLink==4 && style.bgColor || {background:'white'}}>Item 4</li>
-        </ul>
+            <div className='Menu'>
+            {activeScreen==1 && <Screen1 activeLink={activeLink} activeScreen={activeScreen}/>}
+            </div>
         )
   
 

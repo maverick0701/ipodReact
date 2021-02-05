@@ -10,7 +10,8 @@ class Case extends React.Component{
        this.state={
            currentScreen:'Home',
            activeLink:1,
-           angle:0
+           angle:0,
+           activeScreen:1
        }
     
    }
@@ -118,6 +119,7 @@ class Case extends React.Component{
             <Monitor  
             currentScreen={this.state.currentScreen} 
             activeLink={this.state.activeLink}
+            activeScreen={this.state.activeScreen}
             />
             <KeyPad    
             displayMenu={this.displayMenu} 
