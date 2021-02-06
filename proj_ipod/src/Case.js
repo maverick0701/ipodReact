@@ -9,26 +9,24 @@ class Case extends React.Component{
        super();
        this.state={
            currentScreen:'Home',
-           activeLink:1,
+           numScreen:4,
+           activeLink:0,
            angle:0,
            activeScreen:0,
            screenList:[],
            clickedLink:0,
-           numLink:[]
+           numLink:[],
+           sizeList:[]
        }
    }
+    mod=(n, m)=>
+    {
+      return ((n % m) + m) % m;
+    }
    onLeft=()=>
    {
     let currentLink=this.state.activeLink;
-        if(currentLink==1)
-        {
-            currentLink=4;
-            
-        }
-        else
-        {
-            currentLink--;
-        }
+        currentLink=this.mod(currentLink-1,this.state.sizeList[this.state.activeScreen]);
         this.setState({
             activeLink:currentLink
         })
@@ -36,17 +34,8 @@ class Case extends React.Component{
    onRight=()=>
    {
         var currentLink=this.state.activeLink;
-        if(currentLink==4)
-        {
-            currentLink=1;
-            
-        }
-        else
-        {
-            currentLink++;
-        }
-    
-        this.setState({
+        currentLink=this.mod(currentLink+1,this.state.sizeList[this.state.activeScreen]);
+               this.setState({
             activeLink:currentLink
         })
    }
@@ -55,10 +44,23 @@ class Case extends React.Component{
     const item2={'Music':['All Song','Artish','Album','item 13']};
     const item3={'Games':['item 13','item 14','item 15','item 16']};
     const item4={'Setting':['item 17','item 18','item 19','item 20']};
+    let screenSize=[];
     const comp1=[item1,item2,item3,item4];
-    const screenList=[comp1];   
+    const screenList=[comp1]; 
+    screenSize[0]=4; 
+    screenSize[1]=comp1.length;
+    let i=2;
+    while(i<comp1.length)
+    {
+        for(let k in comp1[i-1])
+        {
+            screenSize[i]=comp1[i-1][k].length
+        }
+        i++;
+    }
     this.setState({
-        screenList
+        screenList,
+        sizeList:screenSize
     })
     var touchArea = document.getElementById('toucharea')
     var myRegion = new ZingTouch.Region(touchArea);
@@ -73,16 +75,8 @@ class Case extends React.Component{
             {
                 
                 this.state.angle=e.detail.angle;
-                var currentLink=this.state.activeLink;
-                if(currentLink==1)
-                {
-                    currentLink=4;
-                    
-                }
-                else
-                {
-                    currentLink--;
-                }
+                let currentLink=this.state.activeLink;
+                currentLink=this.mod(currentLink-1,this.state.sizeList[this.state.activeScreen]);
                 this.setState({
                     activeLink:currentLink
                 })
@@ -91,16 +85,8 @@ class Case extends React.Component{
             if(e.detail.angle-this.state.angle<-15)
             {
                 this.state.angle=e.detail.angle;
-                var currentLink=this.state.activeLink;
-                if(currentLink==4)
-                {
-                    currentLink=1;
-                    
-                }
-                else
-                {
-                    currentLink++;
-                }
+                let currentLink=this.state.activeLink;
+                currentLink=this.mod(currentLink+1,this.state.sizeList[this.state.activeScreen]);
                 this.setState({
                     activeLink:currentLink
                 })
@@ -120,23 +106,10 @@ class Case extends React.Component{
    onSelect=()=>
    {
         let activeScreen=this.state.activeScreen;
-        const clickedLink=this.state.activeLink-1;
-        if(activeScreen==0)
-        {
-            activeScreen=1;
-        }
-        else if(activeScreen==1)
-        {
-            activeScreen=2;
-        }
-        else if(activeScreen==2)
-        {
-            activeScreen=3;
-        }
-        
-       
-       this.setState({
-           activeLink:1,
+        const clickedLink=this.state.activeLink;
+        activeScreen=this.mod(activeScreen+1,this.state.numScreen);
+        this.setState({
+           activeLink:0,
            clickedLink:clickedLink,
            activeScreen
            

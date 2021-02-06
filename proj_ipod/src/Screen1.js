@@ -26,10 +26,10 @@ const Screen =(props)=>{
            
         return(
             <ul >
-            <li style={activeLink==1 && style.bgColor || {background:'white'}}>{list[0]}</li>
-            <li style={activeLink==2 && style.bgColor || {background:'white'}}>{list[1]}</li>
-            <li style={activeLink==3 && style.bgColor || {background:'white'}}>{list[2]}</li>
-            <li style={activeLink==4 && style.bgColor || {background:'white'}}>{list[3]}</li>
+            <li style={activeLink==0 && style.bgColor || {background:'white'}}>{list[0]}</li>
+            <li style={activeLink==1 && style.bgColor || {background:'white'}}>{list[1]}</li>
+            <li style={activeLink==2 && style.bgColor || {background:'white'}}>{list[2]}</li>
+            <li style={activeLink==3 && style.bgColor || {background:'white'}}>{list[3]}</li>
         </ul>
         )
   
