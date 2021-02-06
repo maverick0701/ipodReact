@@ -9,9 +9,9 @@ class Case extends React.Component{
        super();
        this.state={
            currentScreen:'Home',
-           numScreen:4,
-           activeLink:0,
+           numScreen:3,
            angle:0,
+           activeLink:0,
            activeScreen:0,
            screenList:[],
            clickedLink:0,
@@ -43,21 +43,24 @@ class Case extends React.Component{
     const item1={'Cover Flow':['item 5','item 6','item 7','item 8']};
     const item2={'Music':['All Song','Artish','Album','item 13']};
     const item3={'Games':['item 13','item 14','item 15','item 16']};
-    const item4={'Setting':['item 17','item 18','item 19','item 20']};
+    const item4={'Setting':['item 17','item 18']};
     let screenSize=[];
     const comp1=[item1,item2,item3,item4];
     const screenList=[comp1]; 
     screenSize[0]=4; 
     screenSize[1]=comp1.length;
     let i=2;
-    while(i<comp1.length)
+    while(i<=comp1.length)
     {
         for(let k in comp1[i-1])
         {
+            console.log(comp1[i-1][k])
             screenSize[i]=comp1[i-1][k].length
         }
         i++;
     }
+    console.log(screenSize)
+  
     this.setState({
         screenList,
         sizeList:screenSize
@@ -76,7 +79,7 @@ class Case extends React.Component{
                 
                 this.state.angle=e.detail.angle;
                 let currentLink=this.state.activeLink;
-                currentLink=this.mod(currentLink-1,this.state.sizeList[this.state.activeScreen]);
+                currentLink=this.mod(currentLink-1,this.state.sizeList[this.state.activeScreen+1]);
                 this.setState({
                     activeLink:currentLink
                 })
@@ -86,7 +89,7 @@ class Case extends React.Component{
             {
                 this.state.angle=e.detail.angle;
                 let currentLink=this.state.activeLink;
-                currentLink=this.mod(currentLink+1,this.state.sizeList[this.state.activeScreen]);
+                currentLink=this.mod(currentLink+1,this.state.sizeList[this.state.activeScreen+1]);
                 this.setState({
                     activeLink:currentLink
                 })
@@ -99,6 +102,7 @@ class Case extends React.Component{
    {
     let activeScreen=1;
     this.setState({
+        activeLink:0,
         currentScreen: currentScreen,
         activeScreen
       })
