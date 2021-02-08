@@ -102,11 +102,19 @@ class Case extends React.Component{
    displayMenu=(currentScreen)=>
    {
     let activeScreen=1;
+    const clickedLink=this.state.activeLink;
+    let size=1;
+    if(activeScreen!=0)
+    {
+        size=this.setSize(activeScreen,this.state.screenList[0],clickedLink);
+    }
     this.setState({
         activeLink:0,
-        currentScreen: currentScreen,
-        activeScreen
-      })
+        clickedLink:clickedLink,
+        activeScreen,
+        size:size
+        
+    })
    }
    setSize=(activeScreen,screenList,clickedLink)=>
    {
@@ -135,9 +143,11 @@ class Case extends React.Component{
         let activeScreen=this.state.activeScreen;
         const clickedLink=this.state.activeLink;
         activeScreen=this.mod(activeScreen+1,this.state.numScreen);
-       
-        let size=this.setSize(activeScreen,this.state.screenList[0],clickedLink);
-        
+        let size=1;
+        if(activeScreen!=0)
+        {
+            size=this.setSize(activeScreen,this.state.screenList[0],clickedLink);
+        }
         this.setState({
            activeLink:0,
            clickedLink:clickedLink,
