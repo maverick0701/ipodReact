@@ -1,6 +1,7 @@
 import React from 'react';
 import Menu from './Menu'
 import './Monitor.css';
+import PlayerScreen from './PlayerScreen';
 import Home from './Home'
 const Monitor =(props)=>{
     const {activeLink,activeScreen,screenList,clickedLink,getList}=props;
@@ -8,6 +9,7 @@ const Monitor =(props)=>{
             <div className='Monitor'>
                 {activeScreen==0 && <Home />}
                 {activeScreen!=0 && 
+                activeScreen!=3 &&
                 <Menu 
                 activeLink={activeLink} 
                 activeScreen={activeScreen}
@@ -15,6 +17,11 @@ const Monitor =(props)=>{
                 clickedLink={clickedLink}
                 getList={getList}
                  />}
+                 {activeScreen!=0 &&
+                 activeScreen==3 &&
+                 <PlayerScreen />
+
+                 }
             </div>
         )
 }

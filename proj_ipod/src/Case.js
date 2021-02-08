@@ -9,7 +9,7 @@ class Case extends React.Component{
        super();
        this.state={
            currentScreen:'Home',
-           numScreen:3,
+           numScreen:4,
            angle:0,
            activeLink:0,
            activeScreen:0,
@@ -41,10 +41,10 @@ class Case extends React.Component{
         })
    }
    componentDidMount(){
-    const item1={'Cover Flow':['item 5','item 6','item 7','item 8']};
-    const item2={'Music':['All Song','Artish','Album','item 13']};
-    const item3={'Games':['item 13','item 14','item 15','item 16']};
-    const item4={'Setting':['item 17','item 18']};
+    const item1={'Cover Flow':['Cover Flow']};
+    const item2={'Music':['All Song','Artish','Album']};
+    const item3={'Games':['Game']};
+    const item4={'Setting':['Setting']};
     let screenSize=[];
     const comp1=[item1,item2,item3,item4];
     const screenList=[comp1]; 
@@ -104,7 +104,7 @@ class Case extends React.Component{
     let activeScreen=1;
     const clickedLink=this.state.activeLink;
     let size=1;
-    if(activeScreen!=0)
+    if(activeScreen!=0 && activeScreen!=3)
     {
         size=this.setSize(activeScreen,this.state.screenList[0],clickedLink);
     }
@@ -144,9 +144,13 @@ class Case extends React.Component{
         const clickedLink=this.state.activeLink;
         activeScreen=this.mod(activeScreen+1,this.state.numScreen);
         let size=1;
-        if(activeScreen!=0)
+        if(activeScreen!=0 && activeScreen!=3)
         {
             size=this.setSize(activeScreen,this.state.screenList[0],clickedLink);
+        }
+        if((clickedLink==0 || clickedLink==2 || clickedLink==3) && activeScreen-1==1)
+        {
+            activeScreen=3
         }
         this.setState({
            activeLink:0,
@@ -154,9 +158,6 @@ class Case extends React.Component{
            activeScreen,
            size:size
            
-       },()=>
-       {
-        console.log(this.state.size);
        })
    }
     render(){
