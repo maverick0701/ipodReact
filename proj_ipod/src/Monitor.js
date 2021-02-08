@@ -4,7 +4,7 @@ import './Monitor.css';
 import PlayerScreen from './PlayerScreen';
 import Home from './Home'
 const Monitor =(props)=>{
-    const {activeLink,activeScreen,screenList,clickedLink,getList}=props;
+    const {activeLink,activeScreen,screenList,clickedLink,getList,selectedPlayer}=props;
         return(
             <div className='Monitor'>
                 {activeScreen==0 && <Home />}
@@ -19,7 +19,9 @@ const Monitor =(props)=>{
                  />}
                  {activeScreen!=0 &&
                  activeScreen==3 &&
-                 <PlayerScreen />
+                 <PlayerScreen 
+                 selectedPlayer={selectedPlayer}
+                 />
 
                  }
             </div>
