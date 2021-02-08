@@ -3,7 +3,7 @@ import Menu from './Menu'
 import './Monitor.css';
 import Home from './Home'
 const Monitor =(props)=>{
-    const {activeLink,activeScreen,screenList,clickedLink}=props;
+    const {activeLink,activeScreen,screenList,clickedLink,getList}=props;
         return(
             <div className='Monitor'>
                 {activeScreen==0 && <Home />}
@@ -13,6 +13,7 @@ const Monitor =(props)=>{
                 activeScreen={activeScreen}
                 screenList={screenList}
                 clickedLink={clickedLink}
+                getList={getList}
                  />}
             </div>
         )

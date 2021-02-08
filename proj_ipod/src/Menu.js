@@ -2,7 +2,7 @@ import React from 'react';
 import Screen1 from './Screen1'
 
 const Menu =(props)=>{
-        const {activeLink,activeScreen,screenList,clickedLink} =props;
+        const {activeLink,activeScreen,screenList,clickedLink,getList} =props;
        
         return(
             <div className='Menu'>
@@ -12,6 +12,7 @@ const Menu =(props)=>{
             activeScreen={activeScreen}
             screenList={screenList[0]}
             clickedLink={clickedLink}
+            getList={getList}
              />}
              {activeScreen==2 && 
             <Screen1 
