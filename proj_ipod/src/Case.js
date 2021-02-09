@@ -105,28 +105,13 @@ class Case extends React.Component{
     let activeScreen=this.state.activeScreen;
     const clickedLink=this.state.activeLink;
     let selectedPlayer=undefined;
-        if(activeScreen!=0 && activeScreen!=3)
-        {
-            selectedPlayer=this.getSelectedPLayer(activeScreen,this.state.screenList[0],clickedLink);
-        }
-        activeScreen=this.mod(activeScreen+1,this.state.numScreen);
-        let size=1;
         
-        if(activeScreen!=0 && activeScreen!=3)
-        {
-            let list=this.setSize(activeScreen,this.state.screenList[0],clickedLink);
-            size=list.length;
-        }
-        if(activeScreen-1==1 && activeScreen!=0 && (clickedLink==0 || clickedLink==2 || clickedLink==3))
-        {
-            activeScreen=3
-        }
        
         this.setState({
            activeLink:0,
            clickedLink:clickedLink,
            activeScreen:1,
-           size:size,
+           size:4,
            selectedPlayer
            
        })
