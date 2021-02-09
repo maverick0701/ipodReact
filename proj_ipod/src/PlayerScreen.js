@@ -5,11 +5,7 @@ const PlayerScreen =(props)=>{
     
         return(
             <div >
-               {selectedPlayer=='All Song' && 
-                <Allsong 
-                activeLink={activeLink}
-                />
-                }
+               {selectedPlayer}
             </div>
         )
 }

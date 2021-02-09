@@ -4,15 +4,17 @@ import React from 'react';
 const Screen =(props)=>{
         const {activeLink,screenList,activeScreen, clickedLink }=props;
         var list;
-        
+      
         if(activeScreen==1)
         {
+            
             list=screenList.map(element => {
             return Object.keys(element)[0]
             });
         }
-        if(activeScreen==2)
+        else if(activeScreen==2)
         {
+            
             let arr=screenList.map(element => {
                  for(let obj in element)
                  {
@@ -22,8 +24,11 @@ const Screen =(props)=>{
             list=arr[clickedLink];
         }
 
-        
-           
+        else if(activeScreen==3)
+        {
+            
+            list=['music 1','music 2','music 3','music 4'];
+        }
         return(
             <ul >
             <li style={activeLink==0 && style.bgColor || {background:'white'}}>{list[0]}</li>

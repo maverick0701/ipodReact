@@ -9,7 +9,7 @@ class Case extends React.Component{
        super();
        this.state={
            currentScreen:'Home',
-           numScreen:4,
+           numScreen:5,
            angle:0,
            activeLink:0,
            activeScreen:0,
@@ -18,7 +18,8 @@ class Case extends React.Component{
            numLink:[],
            sizeList:[],
            size:4,
-           selectedPlayer:undefined
+           selectedPlayer:undefined,
+           prevSelectedPlayer:undefined
        }
    }
     mod=(n, m)=>
@@ -168,30 +169,46 @@ class Case extends React.Component{
    {
         let activeScreen=this.state.activeScreen;
         const clickedLink=this.state.activeLink;
-        let selectedPlayer=undefined;
-        if(activeScreen!=0 && activeScreen!=3)
+        let selectedPlayer=this.state.selectedPlayer;
+        let prevSelectedPlayer=this.state.prevSelectedPlayer;
+    
+        if(activeScreen!=0 && activeScreen!=4)
         {
             selectedPlayer=this.getSelectedPLayer(activeScreen,this.state.screenList[0],clickedLink);
         }
+        
+    
         activeScreen=this.mod(activeScreen+1,this.state.numScreen);
         let size=4;
-        
-        if(activeScreen!=0 && activeScreen!=3)
+        if(activeScreen==1)
         {
             let list=this.setSize(activeScreen,this.state.screenList[0],clickedLink);
             size=list.length;
         }
-        if(activeScreen-1==1 && activeScreen!=0 && (clickedLink==0 || clickedLink==2 || clickedLink==3))
+        if(activeScreen==2  && (clickedLink==0 || clickedLink==2 || clickedLink==3))
         {
-            activeScreen=3
+            activeScreen=4
         }
-       
+        else if(activeScreen==2 && clickedLink==1)
+        {
+            
+            let list=this.setSize(activeScreen,this.state.screenList[0],clickedLink);
+            size=list.length;
+        }
+        else if(activeScreen==3)
+        {
+           
+            let list=['music 1','music 2','music 3','music 4'];
+            size=list.length;
+        }
+        prevSelectedPlayer=selectedPlayer;
         this.setState({
            activeLink:0,
            clickedLink:clickedLink,
            activeScreen,
            size:size,
-           selectedPlayer
+           selectedPlayer,
+           prevSelectedPlayer
            
        })
        

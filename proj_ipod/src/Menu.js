@@ -14,7 +14,8 @@ const Menu =(props)=>{
             clickedLink={clickedLink}
             getList={getList}
              />}
-             {activeScreen==2 && 
+             {(activeScreen==2 || 
+             activeScreen==3)  && 
             <Screen1 
             activeLink={activeLink}
             activeScreen={activeScreen}
