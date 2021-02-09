@@ -21,6 +21,7 @@ const Monitor =(props)=>{
                  activeScreen==3 &&
                  <PlayerScreen 
                  selectedPlayer={selectedPlayer}
+                 activeLink={activeLink}
                  />
 
                  }

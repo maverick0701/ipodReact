@@ -17,7 +17,7 @@ class Case extends React.Component{
            clickedLink:0,
            numLink:[],
            sizeList:[],
-           size:1,
+           size:4,
            selectedPlayer:undefined
        }
    }
@@ -189,7 +189,7 @@ class Case extends React.Component{
             selectedPlayer=this.getSelectedPLayer(activeScreen,this.state.screenList[0],clickedLink);
         }
         activeScreen=this.mod(activeScreen+1,this.state.numScreen);
-        let size=1;
+        let size=4;
         
         if(activeScreen!=0 && activeScreen!=3)
         {

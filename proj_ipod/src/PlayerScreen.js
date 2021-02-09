@@ -1,10 +1,15 @@
 import React from 'react';
+import Allsong from './AllSong'
 const PlayerScreen =(props)=>{
-    const {selectedPlayer}=props;
+    const {activeLink,selectedPlayer}=props;
     
         return(
-            <div className='Monitor'>
-                Player Screen Playing: {selectedPlayer}
+            <div >
+               {selectedPlayer=='All Song' && 
+                <Allsong 
+                activeLink={activeLink}
+                />
+                }
             </div>
         )
 }
