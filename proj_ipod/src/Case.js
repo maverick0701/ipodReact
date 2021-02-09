@@ -201,6 +201,13 @@ class Case extends React.Component{
             let list=['music 1','music 2','music 3','music 4'];
             size=list.length;
         }
+        else if(activeScreen==4)
+        {
+            let list=['music 1','music 2','music 3','music 4'];
+            size=list.length;
+            selectedPlayer=list[clickedLink];
+            console.log(selectedPlayer);
+        }
         prevSelectedPlayer=selectedPlayer;
         this.setState({
            activeLink:0,
