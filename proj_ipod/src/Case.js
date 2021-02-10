@@ -17,7 +17,8 @@ class Case extends React.Component{
            clickedLink:0,
            size:4,
            selectedPlayer:undefined,
-           prevSelectedPlayer:undefined
+           prevSelectedPlayer:undefined,
+           musicList:[]
        }
    }
     mod=(n, m)=>
@@ -73,26 +74,19 @@ class Case extends React.Component{
     const item2={'Music':['All Song','Artish','Album']};
     const item3={'Games':['Game']};
     const item4={'Setting':['Setting']};
-    let screenSize=[];
     const comp1=[item1,item2,item3,item4];
-    const screenList=[comp1]; 
-    screenSize[0]=4; 
-    screenSize[1]=comp1.length;
-    let i=2;
-    while(i<=comp1.length)
-    {
-        for(let k in comp1[i-1])
-        {
-            
-            screenSize[i]=comp1[i-1][k].length
-        }
-        i++;
-    }
-   
-  
+    const screenList=[comp1];
+    let musicList=[];
+        musicList=[
+            {'title':'Music 1','src':'Music 1'},
+            {'title':'Music 2','src':'Music 2'},
+            {'title':'Music 3','src':'Music 3'},
+            {'title':'Music 4','src':'Music 4'}
+        ]
     this.setState({
         screenList,
-        sizeList:screenSize
+        musicList
+        
     })
     var touchArea = document.getElementById('toucharea')
     var myRegion = new ZingTouch.Region(touchArea);
@@ -125,6 +119,7 @@ class Case extends React.Component{
             }
            
         }
+        
 });
    }
    displayMenu=(currentScreen)=>
@@ -240,7 +235,10 @@ class Case extends React.Component{
         }
         else if(activeScreen==4)
         {
-            let list=['music 1','music 2','music 3','music 4'];
+            let list=this.state.musicList.map((element)=>
+            {
+                return element['title'];
+            })
             size=list.length;
             selectedPlayer=list[clickedLink];
             newActiveLink=clickedLink;
