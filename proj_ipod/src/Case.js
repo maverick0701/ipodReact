@@ -26,19 +26,47 @@ class Case extends React.Component{
     }
    onLeft=()=>
    {
-    let currentLink=this.state.activeLink;
-        currentLink=this.mod(currentLink-1,this.state.size);
-        this.setState({
-            activeLink:currentLink
-        })
+       if(this.state.activeScreen!=4)
+       {
+        let currentLink=this.state.activeLink;
+            currentLink=this.mod(currentLink-1,this.state.size);
+            this.setState({
+                activeLink:currentLink
+            })
+        }
+        else if(this.state.activeScreen==4 && this.state.prevSelectedPlayer=='music')
+        {
+            let currentLink=this.state.activeLink;
+            currentLink=this.mod(currentLink-1,this.state.size);
+            let list=['music 1','music 2','music 3','music 4'];
+            let selectedPlayer=list[currentLink];
+            this.setState({
+                activeLink:currentLink,
+                selectedPlayer:selectedPlayer
+            })
+        }
    }
    onRight=()=>
    {
-        var currentLink=this.state.activeLink;
-        currentLink=this.mod(currentLink+1,this.state.size);
-               this.setState({
-            activeLink:currentLink
-        })
+        if(this.state.activeScreen!=4)
+        {
+        let currentLink=this.state.activeLink;
+            currentLink=this.mod(currentLink+1,this.state.size);
+            this.setState({
+                activeLink:currentLink
+            })
+        }
+        else if(this.state.activeScreen==4 && this.state.prevSelectedPlayer=='music')
+        {
+            let currentLink=this.state.activeLink;
+            currentLink=this.mod(currentLink+1,this.state.size);
+            let list=['music 1','music 2','music 3','music 4'];
+            let selectedPlayer=list[currentLink];
+            this.setState({
+                activeLink:currentLink,
+                selectedPlayer:selectedPlayer
+            })
+        }
    }
    componentDidMount(){
     const item1={'Cover Flow':['Cover Flow']};
@@ -182,16 +210,19 @@ class Case extends React.Component{
         {
             let list=this.setSize(activeScreen,this.state.screenList[0],clickedLink);
             size=list.length;
+            prevSelectedPlayer=selectedPlayer;
         }
         if(activeScreen==2  && (clickedLink==0 || clickedLink==2 || clickedLink==3))
         {
-            activeScreen=4
+            activeScreen=4;
+            prevSelectedPlayer=selectedPlayer;
         }
         else if(activeScreen==2 && clickedLink==1)
         {
             
             let list=this.setSize(activeScreen,this.state.screenList[0],clickedLink);
             size=list.length;
+            prevSelectedPlayer=selectedPlayer;
         }
         
         else if(activeScreen==3 && clickedLink==0)
@@ -199,11 +230,13 @@ class Case extends React.Component{
            
             let list=['music 1','music 2','music 3','music 4'];
             size=list.length;
+            prevSelectedPlayer=selectedPlayer;
         }
         else if(activeScreen==3  && clickedLink!=0)
         {
             activeScreen=4;
             selectedPlayer=this.getSelectedPLayer(2,this.state.screenList[0],clickedLink);
+            prevSelectedPlayer=selectedPlayer;
         }
         else if(activeScreen==4)
         {
@@ -211,8 +244,10 @@ class Case extends React.Component{
             size=list.length;
             selectedPlayer=list[clickedLink];
             newActiveLink=clickedLink;
+            prevSelectedPlayer='music'
         }
-        prevSelectedPlayer=selectedPlayer;
+        
+        
         this.setState({
            activeLink:newActiveLink,
            clickedLink:clickedLink,
