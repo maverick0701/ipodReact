@@ -15,8 +15,6 @@ class Case extends React.Component{
            activeScreen:0,
            screenList:[],
            clickedLink:0,
-           numLink:[],
-           sizeList:[],
            size:4,
            selectedPlayer:undefined,
            prevSelectedPlayer:undefined
@@ -171,7 +169,7 @@ class Case extends React.Component{
         const clickedLink=this.state.activeLink;
         let selectedPlayer=this.state.selectedPlayer;
         let prevSelectedPlayer=this.state.prevSelectedPlayer;
-    
+        let newActiveLink=0;
         if(activeScreen!=0 && activeScreen!=4)
         {
             selectedPlayer=this.getSelectedPLayer(activeScreen,this.state.screenList[0],clickedLink);
@@ -195,22 +193,28 @@ class Case extends React.Component{
             let list=this.setSize(activeScreen,this.state.screenList[0],clickedLink);
             size=list.length;
         }
-        else if(activeScreen==3)
+        
+        else if(activeScreen==3 && clickedLink==0)
         {
            
             let list=['music 1','music 2','music 3','music 4'];
             size=list.length;
+        }
+        else if(activeScreen==3  && clickedLink!=0)
+        {
+            activeScreen=4;
+            selectedPlayer=this.getSelectedPLayer(2,this.state.screenList[0],clickedLink);
         }
         else if(activeScreen==4)
         {
             let list=['music 1','music 2','music 3','music 4'];
             size=list.length;
             selectedPlayer=list[clickedLink];
-            console.log(selectedPlayer);
+            newActiveLink=clickedLink;
         }
         prevSelectedPlayer=selectedPlayer;
         this.setState({
-           activeLink:0,
+           activeLink:newActiveLink,
            clickedLink:clickedLink,
            activeScreen,
            size:size,
