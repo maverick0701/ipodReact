@@ -3,6 +3,7 @@ import Monitor from './Monitor';
 import KeyPad from "./KeyPad";
 import ZingTouch from 'zingtouch';
 import './App.css';
+import { faTheRedYeti } from '@fortawesome/free-brands-svg-icons';
 class Case extends React.Component{
    constructor()
    {
@@ -39,8 +40,12 @@ class Case extends React.Component{
         {
             let currentLink=this.state.activeLink;
             currentLink=this.mod(currentLink-1,this.state.size);
-            let list=['music 1','music 2','music 3','music 4'];
+            let list=this.state.musicList.map((element)=>
+            {
+                return element;
+            })
             let selectedPlayer=list[currentLink];
+
             this.setState({
                 activeLink:currentLink,
                 selectedPlayer:selectedPlayer
@@ -61,8 +66,12 @@ class Case extends React.Component{
         {
             let currentLink=this.state.activeLink;
             currentLink=this.mod(currentLink+1,this.state.size);
-            let list=['music 1','music 2','music 3','music 4'];
+            let list=this.state.musicList.map((element)=>
+            {
+                return element;
+            })
             let selectedPlayer=list[currentLink];
+
             this.setState({
                 activeLink:currentLink,
                 selectedPlayer:selectedPlayer
@@ -190,7 +199,7 @@ class Case extends React.Component{
    {
         let activeScreen=this.state.activeScreen;
         const clickedLink=this.state.activeLink;
-        let selectedPlayer=this.state.selectedPlayer;
+        let selectedPlayer='';
         let prevSelectedPlayer=this.state.prevSelectedPlayer;
         let newActiveLink=0;
         if(activeScreen!=0 && activeScreen!=4)
@@ -237,7 +246,7 @@ class Case extends React.Component{
         {
             let list=this.state.musicList.map((element)=>
             {
-                return element['title'];
+                return element;
             })
             size=list.length;
             selectedPlayer=list[clickedLink];
@@ -268,6 +277,8 @@ class Case extends React.Component{
             screenList={this.state.screenList}
             clickedLink={this.state.clickedLink}
             selectedPlayer={this.state.selectedPlayer}
+            prevSelectedPlayer={this.state.prevSelectedPlayer}
+            musicList={this.state.musicList}
             />
             <KeyPad    
             displayMenu={this.displayMenu} 

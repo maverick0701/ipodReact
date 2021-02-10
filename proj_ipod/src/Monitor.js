@@ -4,7 +4,7 @@ import './Monitor.css';
 import PlayerScreen from './PlayerScreen';
 import Home from './Home'
 const Monitor =(props)=>{
-    const {activeLink,activeScreen,screenList,clickedLink,getList,selectedPlayer}=props;
+    const {activeLink,activeScreen,screenList,clickedLink,getList,selectedPlayer,prevSelectedPlayer,musicList}=props;
         return(
             <div className='Monitor'>
                 {activeScreen==0 && <Home />}
@@ -17,11 +17,13 @@ const Monitor =(props)=>{
                 screenList={screenList}
                 clickedLink={clickedLink}
                 getList={getList}
+                musicList={musicList}
                  />}
                  {activeScreen==4 &&
                  <PlayerScreen 
                  selectedPlayer={selectedPlayer}
                  activeLink={activeLink}
+                 prevSelectedPlayer={prevSelectedPlayer}
                  />
 
                  }

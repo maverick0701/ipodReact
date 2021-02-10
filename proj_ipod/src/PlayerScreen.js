@@ -1,11 +1,15 @@
 import React from 'react';
 import Allsong from './AllSong'
 const PlayerScreen =(props)=>{
-    const {activeLink,selectedPlayer}=props;
+    const {activeLink,selectedPlayer,prevSelectedPlayer}=props;
+   
     
         return(
             <div >
-               {selectedPlayer}
+             
+               {prevSelectedPlayer=='music' && selectedPlayer['title']}<br />
+               {prevSelectedPlayer=='music' &&selectedPlayer['src']}
+               {prevSelectedPlayer!='music' && selectedPlayer}
             </div>
         )
 }
