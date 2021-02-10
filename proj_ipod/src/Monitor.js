@@ -2,6 +2,7 @@ import React from 'react';
 import Menu from './Menu'
 import './Monitor.css';
 import PlayerScreen from './PlayerScreen';
+
 import Home from './Home'
 const Monitor =(props)=>{
     const {activeLink,activeScreen,screenList,clickedLink,getList,selectedPlayer,prevSelectedPlayer,musicList}=props;

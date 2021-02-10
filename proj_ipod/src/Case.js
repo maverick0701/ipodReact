@@ -3,6 +3,7 @@ import Monitor from './Monitor';
 import KeyPad from "./KeyPad";
 import ZingTouch from 'zingtouch';
 import './App.css';
+const firebase = require('firebase/app');
 import { faTheRedYeti } from '@fortawesome/free-brands-svg-icons';
 class Case extends React.Component{
    constructor()
@@ -21,6 +22,7 @@ class Case extends React.Component{
            prevSelectedPlayer:undefined,
            musicList:[]
        }
+       this.db=firebase.firestore();
    }
     mod=(n, m)=>
     {
@@ -86,12 +88,29 @@ class Case extends React.Component{
     const comp1=[item1,item2,item3,item4];
     const screenList=[comp1];
     let musicList=[];
-        musicList=[
-            {'title':'Music 1','src':'Music 1'},
-            {'title':'Music 2','src':'Music 2'},
-            {'title':'Music 3','src':'Music 3'},
-            {'title':'Music 4','src':'Music 4'}
-        ]
+        // musicList=[
+        //     {'title':'Music 1','src':'Music 1'},
+        //     {'title':'Music 2','src':'Music 2'},
+        //     {'title':'Music 3','src':'Music 3'},
+        //     {'title':'Music 4','src':'Music 4'}
+        // ]
+        // console.log(musicList);
+        musicList=this.db
+        .collection('Allsongs')
+        .orderBy('title')
+        .onSnapshot((snapshots)=>
+        {
+            musicList=snapshots.docs.map((doc)=>
+            {
+              const data=doc.data();
+              data['id']=doc.id;
+              return data;
+            })
+            this.setState({
+                musicList
+            })
+        })
+        
     this.setState({
         screenList,
         musicList

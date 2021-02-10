@@ -1,8 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+let firebaseKeys=require('./one')
 import reportWebVitals from './reportWebVitals';
-
+var firebase = require("firebase");
+// Required for side-effects
+require("firebase/firestore");
+firebase.initializeApp({
+    apiKey: firebaseKeys.default.apiKey,
+    authDomain:firebaseKeys.default.authDomain,
+    projectId: firebaseKeys.default.projectId,
+    storageBucket: firebaseKeys.default.storageBucket,
+    messagingSenderId: firebaseKeys.default.messagingSenderId,
+    appId: firebaseKeys.default.appId
+});
 ReactDOM.render(
   
     <App />,

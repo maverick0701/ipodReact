@@ -1,5 +1,6 @@
 import React from 'react';
 import Allsong from './AllSong'
+
 const PlayerScreen =(props)=>{
     const {activeLink,selectedPlayer,prevSelectedPlayer}=props;
    
