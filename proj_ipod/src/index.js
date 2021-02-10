@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-let firebaseKeys=require('./one')
+const firebaseKeys=require('./one')
 import reportWebVitals from './reportWebVitals';
 var firebase = require("firebase");
 // Required for side-effects
