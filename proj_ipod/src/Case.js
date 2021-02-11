@@ -2,7 +2,6 @@ import React from 'react';
 import Monitor from './Monitor';
 import KeyPad from "./KeyPad";
 import ZingTouch from 'zingtouch';
-import './Anime'
 import './App.css';
 const firebase = require('firebase/app');
 import { faTheRedYeti } from '@fortawesome/free-brands-svg-icons';
@@ -82,19 +81,29 @@ class Case extends React.Component{
             })
         }
    }
+   htanimation=()=>
+   {
+    
+    
+   }
    rotAnimation=()=>
    {
+       
         var Case=document.getElementsByClassName('Case')[0];
         var KeyPad=document.getElementsByClassName('KeyPad')[0];
         var Monitor=document.getElementsByClassName('Monitor')[0];
+        var Key=document.getElementsByClassName('Key5')[0];
+        
         if(this.rot==false)
         {
             Case.style.transform=`rotateZ(-90deg)`;
-            Case.style.transition=`all 0.2s ease-in-out`
+            Case.style.transition=`all 0.2s ease-in-out`;
+          
             KeyPad.style.transform=`rotateZ(90deg)`;
             KeyPad.style.transition=`all 0.2s ease-in-out`
             Monitor.style.transform=`rotateZ(90deg)`;
-            Monitor.style.transition=`all 0.2s ease-in-out`
+            Monitor.style.transition=`all 0.2s ease-in-out`;
+            
             this.rot=true
 
 
@@ -113,6 +122,7 @@ class Case extends React.Component{
 
 
    componentDidMount(){
+       this.htanimation();
     const item1={'Cover Flow':['Cover Flow']};
     const item2={'Music':['All Song','Artish','Album']};
     const item3={'Games':['Game']};
