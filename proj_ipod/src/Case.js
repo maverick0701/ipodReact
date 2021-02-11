@@ -81,11 +81,7 @@ class Case extends React.Component{
             })
         }
    }
-   htanimation=()=>
-   {
-    
-    
-   }
+   
    rotAnimation=()=>
    {
        
@@ -122,7 +118,7 @@ class Case extends React.Component{
 
 
    componentDidMount(){
-       this.htanimation();
+       
     const item1={'Cover Flow':['Cover Flow']};
     const item2={'Music':['All Song','Artish','Album']};
     const item3={'Games':['Game']};
