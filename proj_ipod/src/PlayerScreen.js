@@ -11,6 +11,7 @@ const PlayerScreen =(props)=>{
                {prevSelectedPlayer=='music' && selectedPlayer['title']}<br />
                {prevSelectedPlayer=='music' &&selectedPlayer['src']}
                {prevSelectedPlayer!='music' && selectedPlayer}
+               
             </div>
         )
 }

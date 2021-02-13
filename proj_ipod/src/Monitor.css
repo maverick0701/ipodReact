@@ -19,9 +19,11 @@
 {
     display: block;
     border: 2px solid black;
-    width: 95px;
+    width: 156px;
     height: 100%;
     position: absolute;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 .Menu ul
 {
@@ -29,10 +31,22 @@
     position: absolute;
     left: -40px;
     top: -17px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 .Menu ul li{
     list-style: none;
     border: 2px solid black;
     height: 23%;
-    width: 91px;
+    width: 152px;
+   
+}
+#one
+{
+    border-top-left-radius: 20px;
+
+}
+#last
+{
+    border-bottom-left-radius: 20px;
 }
