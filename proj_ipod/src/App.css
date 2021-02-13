@@ -11,87 +11,109 @@
        
     }
 }
+body
+{
+    /* position: relative; */
+    /* width: 1375px;
+    height: 1006px; */
 
+    background-image: url('./assets/images.jpeg')
+
+}
 
 .Case
 {
+    
     border: 2px solid black;
-    height: 400px;
-    width: 215px;
+    width :350px;
+    height :500px;
     position: absolute;
     left: 600px;
     top: 170px;
+    background-image: url('./assets/dark-background-gradient-geometric-models_23-2148430535.jpg');
+    background-size: cover;
+    box-shadow: 0px -5px 10px #E5E5E5;
+    border-radius: 40px;
     animation: rotate 1s ease-in-out 1;
     transform-style: preserve-3d;
     perspective: 1000px;
 }
 .KeyPad
 {
-    border:2px solid black;
-    height: 150px;
-    width: 150px;
-    position: absolute;
-    top: 58%;
-    left: 13%;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-self: center;
+    
+        border: 2px solid #f7f4f4;
+        height: 239px;
+        width: 238px;
+        position: absolute;
+        top: 50%;
+        left: 14%;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        background: silver;
+    
     
 }
 .KeyCircle
 {
-    border: 2px solid black;
-    height:80px;
-    width: 80px;
+    /* border: 2px solid #ffffff; */
+    height: 141px;
+    width: 129px;
     border-radius: 50%;
     position: absolute;
-    left: 22%;
-   
+    left: 21%;
+    color: #4e4e4e;
     
 }
 
 .Key1
 {
     position: absolute;
-    top:-30%;
-    left: 30%;
+    top: -29%;
+    left: 33%;
 }
 .Key2
 {
     position: absolute;
-    left: -39%;
+    left: -29%;
     top: 41%;
 }
 .Key3
 {
     top: 40%;
     position: absolute;
-    left: 106%;
+    left: 122%;
 }
 
 .Key4
 {
     position: absolute;
-    top: 107%;
-    left: 44%;
+    top: 114%;
+    left: 50%;
 }
 
 
 #selectButton {
     position: absolute;
-    left: 43px;
-    top: 46px;
-    border: 2px solid black;
-    height: 37%;
+    left: 48px;
+    top: 40px;
+    /* border: 2px solid black; */
+    height: 66%;
     border-radius: 50%;
-    width: 40%;
+    width: 61%;
+    background-color: white;
 }
 
 .Key5
 {
+  
     position: absolute;
-    left: 140px;
-    top:-10px;
+    left: 210px;
+    top: -28px;
+    color:black;
+    font-size: 30px;
 }
+
+
 

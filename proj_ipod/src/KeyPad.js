@@ -13,7 +13,7 @@ const KeyPad=(props)=>{
             <div  className='KeyPad' id='toucharea' >
                 <div className="Key5" style={ { fontSize: 25 }} onClick={()=>rotAnimation()}><FontAwesomeIcon icon={faSyncAlt} /></div>
                 <div className='KeyCircle' >
-                    <div  className='Key1' style={{color:'silver' }} onClick={()=>displayMenu('Menu')}>Menu</div>
+                    <div  className='Key1' style={{color:'#4e4e4e ',fontSize: 25}} onClick={()=>displayMenu('Menu')}>Menu</div>
                     <div className="Key2" style={ { fontSize: 25 }} onClick={()=>onLeft()}><FontAwesomeIcon icon={faBackward} /></div>
                     <div className="Key3" style={ { fontSize: 25 }} onClick={()=>onRight()}><FontAwesomeIcon icon={faForward} /></div>
                     <div className="Key4" style={ { fontSize: 25 }}><FontAwesomeIcon icon={faPlay} /></div>

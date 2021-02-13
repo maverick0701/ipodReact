@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import './App.css'
 const firebaseKeys=require('./one')
 import reportWebVitals from './reportWebVitals';
 var firebase = require("firebase");
@@ -16,7 +17,7 @@ firebase.initializeApp({
 });
 ReactDOM.render(
   
-    <App />,
+    <App className='app'/>,
   
   document.getElementById('root')
 );
