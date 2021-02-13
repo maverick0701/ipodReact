@@ -99,7 +99,13 @@ class Case extends React.Component{
             KeyPad.style.transition=`all 0.2s ease-in-out`
             Monitor.style.transform=`rotateZ(90deg)`;
             Monitor.style.transition=`all 0.2s ease-in-out`;
-            
+            Monitor.style.top='9%';
+            Monitor.style.left='-1%';
+            Case.style.height='573px';
+            Case.style.width='294px';
+            KeyPad.style.left='4%';
+            KeyPad.style.top='55%';
+            Key.style.color='#ffffff';
             this.rot=true
 
 
@@ -109,6 +115,13 @@ class Case extends React.Component{
             Case.style.transform=`rotateZ(0deg)`;
             KeyPad.style.transform=`rotateZ(0deg)`;
             Monitor.style.transform=`rotateZ(0deg)`;
+            Monitor.style.top='2%';
+            Monitor.style.left='8%';
+            Case.style.height='500px';
+            Case.style.width='350px';
+            KeyPad.style.left='14%';
+            KeyPad.style.top='50%';
+            Key.style.color='black';
             this.rot=false
 
         }

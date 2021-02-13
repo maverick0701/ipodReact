@@ -28,7 +28,7 @@ body
     width :350px;
     height :500px;
     position: absolute;
-    left: 600px;
+    left: 546px;
     top: 170px;
     background-image: url('./assets/dark-background-gradient-geometric-models_23-2148430535.jpg');
     background-size: cover;
@@ -55,6 +55,7 @@ body
     
     
 }
+
 .KeyCircle
 {
     /* border: 2px solid #ffffff; */
