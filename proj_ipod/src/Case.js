@@ -20,7 +20,8 @@ class Case extends React.Component{
            size:4,
            selectedPlayer:undefined,
            prevSelectedPlayer:undefined,
-           musicList:[]
+           musicList:[],
+           imgList:[]
        }
        this.rot=false;
        this.db=firebase.firestore();
