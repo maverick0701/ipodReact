@@ -30,6 +30,14 @@ class Case extends React.Component{
     {
       return ((n % m) + m) % m;
     }
+    onPlay=()=>
+    {
+        if(activeScreen==4 && prevSelectedPlayer=='music')
+        {
+            let KeyPad=document.getElementsByClassName('KeyPad')[0];
+            KeyPad.classList.add('clyleColor');
+        }
+    }
    onLeft=()=>
    {
        if(this.state.activeScreen!=4)
@@ -206,6 +214,8 @@ class Case extends React.Component{
    }
    displayMenu=(currentScreen)=>
    {
+    let KeyPad=document.getElementsByClassName('KeyPad')[0];
+    KeyPad.classList.remove('clyleColor');
     let activeScreen=this.state.activeScreen;
     const clickedLink=this.state.activeLink;
     let selectedPlayer=undefined;
@@ -270,6 +280,8 @@ class Case extends React.Component{
    }
    onSelect=()=>
    {
+    let KeyPad=document.getElementsByClassName('KeyPad')[0];
+    KeyPad.classList.remove('clyleColor');
         let activeScreen=this.state.activeScreen;
         const clickedLink=this.state.activeLink;
         let selectedPlayer='';
@@ -359,6 +371,7 @@ class Case extends React.Component{
             onRight={this.onRight} 
             onSelect={this.onSelect}
             rotAnimation={this.rotAnimation}
+            onPlay={this.onPlay}
             />
             </div>
         );
