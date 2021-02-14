@@ -32,7 +32,7 @@ class Case extends React.Component{
     }
     onPlay=()=>
     {
-        if(activeScreen==4 && prevSelectedPlayer=='music')
+        if(this.state.activeScreen==4 && this.state.prevSelectedPlayer=='music')
         {
             let KeyPad=document.getElementsByClassName('KeyPad')[0];
             KeyPad.classList.add('clyleColor');
