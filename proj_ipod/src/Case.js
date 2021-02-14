@@ -75,7 +75,8 @@ class Case extends React.Component{
 
             this.setState({
                 activeLink:currentLink,
-                selectedPlayer:selectedPlayer
+                selectedPlayer:selectedPlayer,
+                play:false
             })
         }
    }
@@ -101,7 +102,8 @@ class Case extends React.Component{
 
             this.setState({
                 activeLink:currentLink,
-                selectedPlayer:selectedPlayer
+                selectedPlayer:selectedPlayer,
+                play:false
             })
         }
    }

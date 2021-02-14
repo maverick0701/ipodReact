@@ -12,7 +12,7 @@ const SongPlayer =(props)=>{
                     <img src=  {selectedPlayer.img} />
                 </div>
                 <div id='controls'>
-                <audio controls="seeking" id="audio" src={Song}></audio>
+                <audio controls="seeking" id="audio" src={selectedPlayer.src} type='audio/mpeg'></audio>
                 </div>
               
 				    
