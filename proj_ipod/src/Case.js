@@ -55,6 +55,8 @@ class Case extends React.Component{
     }
    onLeft=()=>
    {
+    let KeyPad=document.getElementsByClassName('KeyPad')[0];
+    KeyPad.classList.remove('clyleColor');
        if(this.state.activeScreen!=4)
        {
         let currentLink=this.state.activeLink;
@@ -82,6 +84,8 @@ class Case extends React.Component{
    }
    onRight=()=>
    {
+        let KeyPad=document.getElementsByClassName('KeyPad')[0];
+        KeyPad.classList.remove('clyleColor');
         if(this.state.activeScreen!=4)
         {
         let currentLink=this.state.activeLink;
