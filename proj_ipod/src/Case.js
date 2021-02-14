@@ -134,7 +134,7 @@ class Case extends React.Component{
    componentDidMount(){
        
     const item1={'Cover Flow':['Cover Flow']};
-    const item2={'Music':['All Song','Artish','Album']};
+    const item2={'Music':['All Song','Artist','Album']};
     const item3={'Games':['Game']};
     const item4={'Setting':['Setting']};
     const comp1=[item1,item2,item3,item4];

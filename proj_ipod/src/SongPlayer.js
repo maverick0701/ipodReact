@@ -1,8 +1,10 @@
 import React from 'react';
-import './musicPlayer.css'
+import './musicPlayer.css';
+import Song from './music/Song1.mp3'
 const SongPlayer =(props)=>{
     const {selectedPlayer}=props;
-    console.log(selectedPlayer.img)
+    
+  
     
         return(
             <div id='musicPlayer' >
@@ -10,8 +12,12 @@ const SongPlayer =(props)=>{
                     <img src=  {selectedPlayer.img} />
                 </div>
                 <div id='controls'>
-
+                <audio controls="seeking" id="audio" src={Song}></audio>
                 </div>
+              
+				    
+			   
+                
                
             </div>
         )
