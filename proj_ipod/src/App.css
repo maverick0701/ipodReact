@@ -131,3 +131,11 @@ body
 {
     animation: mymove 5s infinite alternate;
 }
+
+#selectStyle
+{
+    position: absolute;
+    top: 34px;
+    left: 35px;
+    color: blue;
+}

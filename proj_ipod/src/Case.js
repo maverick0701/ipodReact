@@ -241,7 +241,8 @@ class Case extends React.Component{
            clickedLink:clickedLink,
            activeScreen:1,
            size:4,
-           selectedPlayer
+           selectedPlayer,
+           play:false
            
        })
    }
@@ -361,7 +362,8 @@ class Case extends React.Component{
            activeScreen,
            size:size,
            selectedPlayer,
-           prevSelectedPlayer
+           prevSelectedPlayer,
+           play:false
            
        })
        

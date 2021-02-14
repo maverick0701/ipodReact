@@ -23,6 +23,7 @@ const KeyPad=(props)=>{
                     
                 </div>
                 <div id='selectButton' onClick={()=>onSelect()}>
+                    <h1 id='selectStyle'>Select</h1>
                 </div>
                 
             </div>
