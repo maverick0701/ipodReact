@@ -21,7 +21,8 @@ class Case extends React.Component{
            selectedPlayer:undefined,
            prevSelectedPlayer:undefined,
            musicList:[],
-           imgList:[]
+           imgList:[],
+           play:false
        }
        this.rot=false;
        this.db=firebase.firestore();
@@ -36,6 +37,20 @@ class Case extends React.Component{
         {
             let KeyPad=document.getElementsByClassName('KeyPad')[0];
             KeyPad.classList.add('clyleColor');
+            var x = document.getElementById("audio");
+            if(!this.state.play)
+            {
+               x.play();
+
+            }
+            else
+            {
+                x.pause();
+            }
+            this.setState({
+                play:!this.state.play
+            })
+           
         }
     }
    onLeft=()=>
@@ -372,6 +387,7 @@ class Case extends React.Component{
             onSelect={this.onSelect}
             rotAnimation={this.rotAnimation}
             onPlay={this.onPlay}
+            play={this.state.play}
             />
             </div>
         );
