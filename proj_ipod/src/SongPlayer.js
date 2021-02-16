@@ -1,6 +1,6 @@
 import React from 'react';
 import './musicPlayer.css';
-import Song from './music/Song1.mp3'
+
 const SongPlayer =(props)=>{
     const {selectedPlayer}=props;
     

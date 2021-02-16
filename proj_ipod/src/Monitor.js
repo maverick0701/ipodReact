@@ -1,7 +1,7 @@
 import React from 'react';
-import Menu from './Menu'
+import Menu from './SelectionScreen/Menu'
 import './Monitor.css';
-import PlayerScreen from './PlayerScreen';
+import PlayerScreen from './SelectionScreen/PlayerScreen';
 
 import Home from './Home'
 const Monitor =(props)=>{
