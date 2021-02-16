@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ipodReact/static/css/main.12a462a2.chunk.css",
-    "main.js": "/ipodReact/static/js/main.1f33ac00.chunk.js",
-    "main.js.map": "/ipodReact/static/js/main.1f33ac00.chunk.js.map",
+    "main.js": "/ipodReact/static/js/main.eafc65df.chunk.js",
+    "main.js.map": "/ipodReact/static/js/main.eafc65df.chunk.js.map",
     "runtime-main.js": "/ipodReact/static/js/runtime-main.2f3529da.js",
     "runtime-main.js.map": "/ipodReact/static/js/runtime-main.2f3529da.js.map",
     "static/js/2.5ecfcc50.chunk.js": "/ipodReact/static/js/2.5ecfcc50.chunk.js",
@@ -12,7 +12,6 @@
     "index.html": "/ipodReact/index.html",
     "static/css/main.12a462a2.chunk.css.map": "/ipodReact/static/css/main.12a462a2.chunk.css.map",
     "static/js/2.5ecfcc50.chunk.js.LICENSE.txt": "/ipodReact/static/js/2.5ecfcc50.chunk.js.LICENSE.txt",
-    "static/media/Song1.985dd156.mp3": "/ipodReact/static/media/Song1.985dd156.mp3",
     "static/media/App.css": "/ipodReact/static/media/dark-background-gradient-geometric-models_23-2148430535.2319dc15.jpg",
     "static/media/Monitor.css": "/ipodReact/static/media/jon-tyson-eIhH7RTlTZA-unsplash.c4e17781.jpg"
   },
@@ -20,6 +19,6 @@
     "static/js/runtime-main.2f3529da.js",
     "static/js/2.5ecfcc50.chunk.js",
     "static/css/main.12a462a2.chunk.css",
-    "static/js/main.1f33ac00.chunk.js"
+    "static/js/main.eafc65df.chunk.js"
   ]
 }
